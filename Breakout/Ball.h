@@ -12,8 +12,11 @@ public:
     ~Ball();
     void update(float dt);
     void render();
+    void resetBall();
     void setVelocity(float coeff, float duration);
     void setFireBall(float duration);
+    void setTrackerBall(float duration);
+    void setVelocityMult(float mult);
 
 private:
     sf::CircleShape _sprite;
@@ -22,7 +25,10 @@ private:
     float _velocity;
     bool _isAlive;
     bool _isFireBall;
+    bool _isTrackerBall;
     float _timeWithPowerupEffect;
+    float _velocityMult;
+    int _consecutiveHits; //number of bricks hit without returning to the paddle or dropping out of bounds
 
     GameManager* _gameManager;  // Reference to the GameManager
 

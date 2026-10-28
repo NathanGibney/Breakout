@@ -23,6 +23,11 @@ void BrickManager::createBricks(int rows, int cols, float brickWidth, float bric
     }
 }
 
+void BrickManager::deleteBricks()
+{
+    _bricks.clear();
+}
+
 void BrickManager::render()
 {
     for (auto& brick : _bricks) {
@@ -45,6 +50,17 @@ int BrickManager::checkCollision(sf::CircleShape& ball, sf::Vector2f& direction)
         if (ballY > brickBounds.top && ballY < brickBounds.top + brickBounds.height)
             // unless it's horizontal (collision from side)
             collisionResponse = 1;
+
+        sf::Vector2f partPos = brick.getBounds().getPosition();
+        sf::Vector2f partOffset(0, 0);
+        switch (_gameManager->getLevel()) //bricks are different sizes in different levels, so account for this
+        {
+        case 1: partOffset = sf::Vector2f(45, 15); break;
+        case 2: partOffset = sf::Vector2f(40, 15); break;
+        default:  partOffset = sf::Vector2f(35, 15); break;
+        }
+        partPos += partOffset;
+        _gameManager->getParticleManager()->emitBrickParticles(partPos);
 
         // Mark the brick as destroyed (for simplicity, let's just remove it from rendering)
         // In a complete implementation, you would set an _isDestroyed flag or remove it from the vector

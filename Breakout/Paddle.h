@@ -11,6 +11,8 @@ public:
 
     void moveLeft(float dt);
     void moveRight(float dt);
+    void mouseInput(sf::RenderWindow& window);
+    void resetPos(sf::RenderWindow* window);
     void update(float dt);
     void render();
     sf::FloatRect getBounds() const;

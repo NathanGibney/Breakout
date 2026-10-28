@@ -8,6 +8,7 @@ enum POWERUPS
     fastBall,
     slowBall,
     fireBall,
+    trackerBall,
     none
 };
 

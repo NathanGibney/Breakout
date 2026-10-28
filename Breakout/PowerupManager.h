@@ -10,6 +10,7 @@
 #include "PowerupSlowBall.h"
 #include "PowerupFastBall.h"
 #include "PowerupFireBall.h"
+#include "PowerupTrackerBall.h"
 #include "Paddle.h"
 #include "Ball.h"
 
@@ -24,6 +25,7 @@ public:
     void render();
     void spawnPowerup(); // Method to spawn a power-up
     void checkCollision(); // Check collision with paddle
+    void resetPowerups();
     int getPowerupsSpawned();
     std::pair<POWERUPS, float> getPowerupInEffect();
 
