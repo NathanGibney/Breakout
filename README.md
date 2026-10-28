@@ -4,14 +4,16 @@ W Kavanagh & N Merchant. Summer 2024 (last maintained, Oct 26)
 
 ## Controls
 
-A/D to move the paddle right and left.
+Move mouse to move paddle.
 P to pause.
+Enter to continue/restart when prompted.
 
 ## Powerups
 
 big/small paddle (blue)
 fast/slow ball (fancy yellow)
 fire ball (green)
+tracker (purple)
 
 # Tasklist
 
@@ -31,9 +33,14 @@ You are to spend between three and eight hours improving this simple Breakout im
 * Implement commentary with calls to an LLM such as Ollama
 
 # Time Details and Changelist
-_TO DO_
-
-<Add information to this section about the time you've taken for this task along with a professional changelist.>
+(27/10/2026) (90 minutes spent)
+Game loop - Game no longer ends once all bricks are broken. advance to a new stage to play infinitely 
+Scoring - Earn point for breaking bricks. score increases further with consecutive hits and at higher levels 
+(28/10/2026) (120 minutes spent)
+Increasing difficulty - The number of bricks and the speed of the ball will increase with each level 
+Tracking powerup - Pick this up to cause the ball to track your paddle for easy recovery
+Particle effects - bricks now create particles on destruction 
+Mouse input - paddle is now moved using the mouse instead of the keyboard
 
 ---
 
